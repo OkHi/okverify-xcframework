@@ -1,0 +1,11 @@
+framework module OkVerify {
+  umbrella header "OkVerify.h"
+
+  export *
+  module * { export * }
+}
+
+module OkVerify.Swift {
+    header "OkVerify-Swift.h"
+    requires objc
+}

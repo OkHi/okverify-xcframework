@@ -1,0 +1,108 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OkVerify
+import CoreData
+import CoreLocation
+import Foundation
+import OkCore
+@_exported import OkVerify
+import Swift
+import UIKit
+import UserNotifications
+extension UIDevice {
+  public static let modelName: Swift.String
+  public static var osType: Swift.String {
+    get
+  }
+}
+public protocol OkVerifyDelegate : ObjectiveC.NSObject {
+  func verify(_ okVerify: OkVerify.OkHiVerify, didEncounterError error: OkCore.OkHiError)
+  func verify(_ okVerify: OkVerify.OkHiVerify, didStartMonitoringLocation locationId: Swift.String)
+  func verify(_ okVerify: OkVerify.OkHiVerify, allowedLocation result: Swift.Bool)
+  func verify(_ okVerify: OkVerify.OkHiVerify, didUpdateLocation locationId: Swift.String, lat: Swift.Double, lon: Swift.Double)
+}
+@objc public class OkHiVerify : ObjectiveC.NSObject {
+  weak public var delegate: OkVerify.OkVerifyDelegate?
+  public init(okHiAuth: OkCore.OkHiAuth, okHiUser: OkCore.OkHiUser)
+  public func stopMonitoring()
+  public func stopMonitoring(locationId: Swift.String)
+  public func isTracking(locationId: Swift.String) -> Swift.Bool
+  public func isLocationServiceEnabled() -> Swift.Bool?
+  public func clearStorage()
+  public func start(user: OkCore.OkHiUser, location: OkCore.OkHiLocation)
+  public func okGeofence(allowedLocation: Swift.Bool)
+  public func didUpdateLocation(locationId: Swift.String, lat: Swift.Double, lon: Swift.Double)
+  public func okGeofence(didEncounterError error: OkCore.OkHiError)
+  public func okGeofence(success locationId: Swift.String)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc(TransitEntity) public class TransitEntity : CoreData.NSManagedObject, Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+}
+extension Date {
+  public func toMillis() -> Swift.Int64
+}
+extension TransitEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<OkVerify.TransitEntity>
+  @objc @NSManaged dynamic public var gps_accuracy: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var device_manufacturer: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var device_model: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var device_os_name: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var device_os_version: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var geo_point: OkCore.GeoPoint? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var geo_point_source: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var geopoint_provider: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var id: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var ids: [Swift.String]? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var transition_date: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var location_date: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var transition_event: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension TransitEntity : Swift.Identifiable {
+  public typealias ID = Swift.String
+}
+@_hasMissingDesignatedInitializers public class CoreDataManager {
+  @objc deinit
+}
