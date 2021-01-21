@@ -4,18 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/OkCore.framework/Info.plist</key>
-		<data>
-		7DemmytS4b7jWV59SfdCCgAgWnk=
-		</data>
-		<key>Frameworks/OkCore.framework/OkCore</key>
-		<data>
-		NHCbowwB/1r0OMBkewReIqAWjTQ=
-		</data>
-		<key>Frameworks/OkCore.framework/_CodeSignature/CodeResources</key>
-		<data>
-		L/mT5YcLm23kqMvXHohBlnw7Zso=
-		</data>
 		<key>Headers/OkVerify-Swift.h</key>
 		<data>
 		onOvJ6Fmy1ivDe0GYFNpqlkgwlM=
@@ -115,39 +103,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/OkCore.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7DemmytS4b7jWV59SfdCCgAgWnk=
-			</data>
-			<key>hash2</key>
-			<data>
-			cHeWhgX8Kt1DSirt/W6bb1NthfioBUUtkR4c05lL11Y=
-			</data>
-		</dict>
-		<key>Frameworks/OkCore.framework/OkCore</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NHCbowwB/1r0OMBkewReIqAWjTQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			jLDmmAGOT7JbUzUb0zJdvju+JryvuNd8swab9tS7MeM=
-			</data>
-		</dict>
-		<key>Frameworks/OkCore.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			L/mT5YcLm23kqMvXHohBlnw7Zso=
-			</data>
-			<key>hash2</key>
-			<data>
-			kQYAA/lrMmZIZZgBuz9R/CyGAdvbpZjmIZGmOJzME20=
-			</data>
-		</dict>
 		<key>Headers/OkVerify-Swift.h</key>
 		<dict>
 			<key>hash</key>
