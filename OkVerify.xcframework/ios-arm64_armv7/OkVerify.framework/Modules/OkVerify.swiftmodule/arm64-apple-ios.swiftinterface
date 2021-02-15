@@ -11,7 +11,7 @@ import UIKit
 import UserNotifications
 public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   func verify(_ okVerify: OkVerify.OkHiVerify, didEncounterError error: OkCore.OkHiError)
-  func verify(_ okVerify: OkVerify.OkHiVerify, didStartMonitoringLocation locationId: Swift.String)
+  func verify(_ okVerify: OkVerify.OkHiVerify, didStartTrackingLocation locationId: Swift.String)
   func verify(_ okVerify: OkVerify.OkHiVerify, didAllowedLocation result: Swift.Bool)
 }
 @objc public class OkHiVerify : ObjectiveC.NSObject {
