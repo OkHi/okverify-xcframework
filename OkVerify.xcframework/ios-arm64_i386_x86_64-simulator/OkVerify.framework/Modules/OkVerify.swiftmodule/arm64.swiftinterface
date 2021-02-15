@@ -21,15 +21,12 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   }
   public init(okHiUser: OkCore.OkHiUser)
   public static func initialize(with okHiAuth: OkCore.OkHiAuth)
-  public func stopMonitoring()
-  public func stopMonitoring(locationId: Swift.String)
+  public func stopTrackingAll()
+  public func stopTracking(locationId: Swift.String)
   public func isTracking(locationId: Swift.String) -> Swift.Bool
   public func isLocationServiceEnabled() -> Swift.Bool?
   public func clearStorage()
   public func start(location: OkCore.OkHiLocation)
-  public func okGeofence(allowedLocation: Swift.Bool)
-  public func okGeofence(didEncounterError error: OkCore.OkHiError)
-  public func okGeofence(success locationId: Swift.String)
   @objc deinit
   @objc override dynamic public init()
 }
