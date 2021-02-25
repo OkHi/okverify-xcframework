@@ -20,6 +20,7 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
     set
   }
   public init(user: OkCore.OkHiUser)
+  public func requstLocationPermission()
   public static func initialize(with okHiAuth: OkCore.OkHiAuth)
   public func stopAll()
   public func stop(locationId: Swift.String)
