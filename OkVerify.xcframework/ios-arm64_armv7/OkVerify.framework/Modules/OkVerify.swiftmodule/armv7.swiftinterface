@@ -23,6 +23,12 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   public init(user: OkCore.OkHiUser)
   public func requstLocationPermission()
   public static func initialize(with okHiAuth: OkCore.OkHiAuth)
+  public static var version: Swift.String {
+    get
+  }
+  public static var build: Swift.String {
+    get
+  }
   public func stopAll()
   public func stop(locationId: Swift.String)
   public func isTracking(locationId: Swift.String) -> Swift.Bool
