@@ -14,6 +14,7 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   func verify(_ okVerify: OkVerify.OkHiVerify, didStart locationId: Swift.String)
   func verify(_ okVerify: OkVerify.OkHiVerify, didEnd locationId: Swift.String)
   func verify(_ okVerify: OkVerify.OkHiVerify, didEnableLocationServices result: Swift.Bool)
+  func verify(_ okVerify: OkVerify.OkHiVerify, didEnabledAlwaysLocation result: Swift.Bool)
 }
 @objc public class OkHiVerify : ObjectiveC.NSObject {
   weak public var delegate: OkVerify.OkVerifyDelegate? {
@@ -21,7 +22,7 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
     set
   }
   public init(user: OkCore.OkHiUser)
-  public func requstLocationPermission()
+  public func requstLocationPermission(forceRequestAlwaysPermission: Swift.Bool = true)
   public static func initialize(with okHiAuth: OkCore.OkHiAuth)
   public static var version: Swift.String {
     get
