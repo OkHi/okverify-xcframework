@@ -22,7 +22,7 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
     set
   }
   public init(user: OkCore.OkHiUser)
-  public func requstLocationPermission(forceRequestAlwaysPermission: Swift.Bool = true)
+  public func requestLocationPermission(forceRequestAlwaysPermission: Swift.Bool = true)
   public static func initialize(with okHiAuth: OkCore.OkHiAuth)
   public static var version: Swift.String {
     get
