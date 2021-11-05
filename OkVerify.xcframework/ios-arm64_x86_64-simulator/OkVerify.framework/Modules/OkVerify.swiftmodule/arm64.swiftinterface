@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
-// swift-module-flags: -target arm64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OkVerify
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OkVerify
 import CoreData
 import CoreLocation
 import Foundation
@@ -9,6 +9,7 @@ import OkCore
 import Swift
 import UIKit
 import UserNotifications
+import _Concurrency
 public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   func verify(_ okVerify: OkVerify.OkHiVerify, didEncounterError error: OkCore.OkHiError)
   func verify(_ okVerify: OkVerify.OkHiVerify, didStart locationId: Swift.String)
@@ -32,6 +33,5 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   public func isTracking(locationId: Swift.String) -> Swift.Bool
   public func clearStorage()
   public func start(location: OkCore.OkHiLocation)
-  @objc override dynamic public init()
   @objc deinit
 }
