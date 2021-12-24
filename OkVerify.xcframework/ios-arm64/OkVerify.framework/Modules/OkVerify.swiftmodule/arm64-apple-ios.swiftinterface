@@ -22,7 +22,7 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
     set
   }
   public init(user: OkCore.OkHiUser)
-  @objc public static func initialize(with okHiAuth: OkCore.OkHiAuth, application: UIKit.UIApplication)
+  @objc public static func initialize(with okHiAuth: OkCore.OkHiAuth)
   @objc public static func setUpOkVerifyOnBackground()
   public static func syncRecords(task: BackgroundTasks.BGAppRefreshTask)
   public static var version: Swift.String {

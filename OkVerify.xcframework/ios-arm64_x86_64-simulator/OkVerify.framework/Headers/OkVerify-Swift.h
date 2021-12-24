@@ -210,14 +210,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @class OkHiAuth;
-@class UIApplication;
 
 SWIFT_CLASS("_TtC8OkVerify10OkHiVerify")
 @interface OkHiVerify : NSObject
 /// Static method to initialize configuration
 /// \param okHiAuth Authorization info that includes BranchId, ClientKey and Environment
 ///
-+ (void)initializeWith:(OkHiAuth * _Nonnull)okHiAuth application:(UIApplication * _Nonnull)application;
++ (void)initializeWith:(OkHiAuth * _Nonnull)okHiAuth;
 + (void)setUpOkVerifyOnBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -441,14 +440,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @class OkHiAuth;
-@class UIApplication;
 
 SWIFT_CLASS("_TtC8OkVerify10OkHiVerify")
 @interface OkHiVerify : NSObject
 /// Static method to initialize configuration
 /// \param okHiAuth Authorization info that includes BranchId, ClientKey and Environment
 ///
-+ (void)initializeWith:(OkHiAuth * _Nonnull)okHiAuth application:(UIApplication * _Nonnull)application;
++ (void)initializeWith:(OkHiAuth * _Nonnull)okHiAuth;
 + (void)setUpOkVerifyOnBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
