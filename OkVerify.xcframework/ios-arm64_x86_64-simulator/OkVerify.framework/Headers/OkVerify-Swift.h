@@ -190,6 +190,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreData;
+@import Foundation;
 @import ObjectiveC;
 #endif
 
@@ -209,10 +211,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+@class NSString;
 @class OkHiAuth;
 
 SWIFT_CLASS("_TtC8OkVerify10OkHiVerify")
 @interface OkHiVerify : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable currentToken;)
++ (NSString * _Nullable)currentToken SWIFT_WARN_UNUSED_RESULT;
++ (void)setCurrentToken:(NSString * _Nullable)value;
 /// Static method to initialize configuration
 /// \param okHiAuth Authorization info that includes BranchId, ClientKey and Environment
 ///
@@ -220,6 +226,35 @@ SWIFT_CLASS("_TtC8OkVerify10OkHiVerify")
 + (void)setUpOkVerifyOnBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class NSEntityDescription;
+@class NSManagedObjectContext;
+
+/// Defines TransitEntity class
+SWIFT_CLASS_NAMED("TransitEntity")
+@interface TransitEntity : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class NSNumber;
+@class GeoPoint;
+
+@interface TransitEntity (SWIFT_EXTENSION(OkVerify))
+@property (nonatomic) double gps_accuracy;
+@property (nonatomic, copy) NSString * _Nullable device_manufacturer;
+@property (nonatomic, copy) NSString * _Nullable device_model;
+@property (nonatomic, copy) NSString * _Nullable device_os_name;
+@property (nonatomic, copy) NSString * _Nullable device_os_version;
+@property (nonatomic, strong) GeoPoint * _Nullable geo_point;
+@property (nonatomic, copy) NSString * _Nullable geo_point_source;
+@property (nonatomic, copy) NSString * _Nullable geopoint_provider;
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable ids;
+@property (nonatomic) int64_t transition_date;
+@property (nonatomic) int64_t location_date;
+@property (nonatomic, copy) NSString * _Nullable transition_event;
 @end
 
 
@@ -420,6 +455,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreData;
+@import Foundation;
 @import ObjectiveC;
 #endif
 
@@ -439,10 +476,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+@class NSString;
 @class OkHiAuth;
 
 SWIFT_CLASS("_TtC8OkVerify10OkHiVerify")
 @interface OkHiVerify : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable currentToken;)
++ (NSString * _Nullable)currentToken SWIFT_WARN_UNUSED_RESULT;
++ (void)setCurrentToken:(NSString * _Nullable)value;
 /// Static method to initialize configuration
 /// \param okHiAuth Authorization info that includes BranchId, ClientKey and Environment
 ///
@@ -450,6 +491,35 @@ SWIFT_CLASS("_TtC8OkVerify10OkHiVerify")
 + (void)setUpOkVerifyOnBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class NSEntityDescription;
+@class NSManagedObjectContext;
+
+/// Defines TransitEntity class
+SWIFT_CLASS_NAMED("TransitEntity")
+@interface TransitEntity : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class NSNumber;
+@class GeoPoint;
+
+@interface TransitEntity (SWIFT_EXTENSION(OkVerify))
+@property (nonatomic) double gps_accuracy;
+@property (nonatomic, copy) NSString * _Nullable device_manufacturer;
+@property (nonatomic, copy) NSString * _Nullable device_model;
+@property (nonatomic, copy) NSString * _Nullable device_os_name;
+@property (nonatomic, copy) NSString * _Nullable device_os_version;
+@property (nonatomic, strong) GeoPoint * _Nullable geo_point;
+@property (nonatomic, copy) NSString * _Nullable geo_point_source;
+@property (nonatomic, copy) NSString * _Nullable geopoint_provider;
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable ids;
+@property (nonatomic) int64_t transition_date;
+@property (nonatomic) int64_t location_date;
+@property (nonatomic, copy) NSString * _Nullable transition_event;
 @end
 
 

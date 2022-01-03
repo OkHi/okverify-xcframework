@@ -17,6 +17,7 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   func verify(_ okVerify: OkVerify.OkHiVerify, didEnd locationId: Swift.String)
 }
 @objc public class OkHiVerify : ObjectiveC.NSObject {
+  @objc public static var currentToken: Swift.String?
   weak public var delegate: OkVerify.OkVerifyDelegate? {
     get
     set
@@ -24,7 +25,7 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   public init(user: OkCore.OkHiUser)
   @objc public static func initialize(with okHiAuth: OkCore.OkHiAuth)
   @objc public static func setUpOkVerifyOnBackground()
-  public static func syncRecords(task: BackgroundTasks.BGAppRefreshTask)
+  public static func getAllSyncRecords(completionHandler: @escaping () -> ()) -> [OkVerify.TransitEntity]
   public static var version: Swift.String {
     get
   }
@@ -37,4 +38,67 @@ public protocol OkVerifyDelegate : ObjectiveC.NSObject {
   public func clearStorage()
   public func start(location: OkCore.OkHiLocation)
   @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TransitEntity) public class TransitEntity : CoreData.NSManagedObject, Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension OkVerify.TransitEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<OkVerify.TransitEntity>
+  @objc @NSManaged dynamic public var gps_accuracy: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var device_manufacturer: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var device_model: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var device_os_name: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var device_os_version: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var geo_point: OkCore.GeoPoint? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var geo_point_source: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var geopoint_provider: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var id: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var ids: [Swift.String]? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var transition_date: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var location_date: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var transition_event: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension OkVerify.TransitEntity : Swift.Identifiable {
+  public typealias ID = Swift.String
 }
