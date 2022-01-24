@@ -221,7 +221,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable cur
 /// \param okHiAuth Authorization info that includes BranchId, ClientKey and Environment
 ///
 + (void)initializeWith:(OkHiAuth * _Nonnull)okHiAuth;
-+ (void)setUpOkVerifyOnBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
