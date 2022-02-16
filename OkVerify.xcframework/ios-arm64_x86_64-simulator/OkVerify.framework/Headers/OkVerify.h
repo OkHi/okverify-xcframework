@@ -2,7 +2,7 @@
 //  OkVerify.h
 //  OkVerify
 //
-//  Created by Maxim on 20.01.2021.
+//  Created by Julius Kiano on 11/02/2022.
 //
 
 #import <Foundation/Foundation.h>

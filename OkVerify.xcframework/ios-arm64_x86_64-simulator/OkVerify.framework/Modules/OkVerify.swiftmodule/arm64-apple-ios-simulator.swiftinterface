@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OkVerify
 import CoreData
 import CoreLocation
@@ -8,30 +8,181 @@ import OkCore
 @_exported import OkVerify
 import Swift
 import UIKit
-import UserNotifications
 import _Concurrency
-public protocol OkVerifyDelegate : ObjectiveC.NSObject {
-  func verify(_ okVerify: OkVerify.OkHiVerify, didEncounterError error: OkCore.OkHiError)
-  func verify(_ okVerify: OkVerify.OkHiVerify, didStart locationId: Swift.String)
-  func verify(_ okVerify: OkVerify.OkHiVerify, didEnd locationId: Swift.String)
-}
-@objc public class OkHiVerify : ObjectiveC.NSObject {
-  weak public var delegate: OkVerify.OkVerifyDelegate? {
-    get
-    set
-  }
-  public init(user: OkCore.OkHiUser)
-  public static func initialize(with okHiAuth: OkCore.OkHiAuth)
-  public static var version: Swift.String {
-    get
-  }
-  public static var build: Swift.String {
-    get
-  }
-  public func stopAll()
-  public func stop(locationId: Swift.String)
-  public func isTracking(locationId: Swift.String) -> Swift.Bool
-  public func clearStorage()
-  public func start(location: OkCore.OkHiLocation)
+@objc @_inheritsConvenienceInitializers public class OkVerifyUser : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
+extension OkVerify.OkVerifyGeofence {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<OkVerify.OkVerifyGeofence>
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var latitude: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var longitude: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var radius: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var userId: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension OkVerify.OkVerifyGeofenceTransition {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<OkVerify.OkVerifyGeofenceTransition>
+  @objc @NSManaged dynamic public var accuracy: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var geoPointSource: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var latitude: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var locationDate: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var locationId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var longitude: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var transition: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var transitionDate: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+}
+@objc @_inheritsConvenienceInitializers public class OkVerifyGeofence : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+public enum OkVerifyError : Swift.Error {
+  case invalidUrl
+  case invalidData
+  case networkError
+  case unknownError
+  case unableToParseResponse
+  case invalidPhoneNumber
+  case unauthorized
+  case addressVerificationFailure
+  case addressVerificationDenied
+  case denied
+  case inVerification
+  case permissionDenied
+  case serviceUnavailable
+  case maxAttempts
+  public static func == (a: OkVerify.OkVerifyError, b: OkVerify.OkVerifyError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension OkVerify.OkVerifyError : Foundation.LocalizedError {
+  public var message: Swift.String {
+    get
+  }
+  public var code: Swift.String {
+    get
+  }
+}
+public enum OkVerifyLocationPermissionRequestType {
+  case whenInUse
+  case always
+  public static func == (a: OkVerify.OkVerifyLocationPermissionRequestType, b: OkVerify.OkVerifyLocationPermissionRequestType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension OkVerify.OkVerifyUser {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<OkVerify.OkVerifyUser>
+  @objc @NSManaged dynamic public var accessToken: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var bearerToken: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var environment: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var phoneNumber: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+public protocol OkVerifyDelegate {
+  func verify(_ okverify: OkVerify.OkHiVerify, didChangeLocationPermissionStatus requestType: OkVerify.OkVerifyLocationPermissionRequestType, status: Swift.Bool)
+  func verify(_ okverify: OkVerify.OkHiVerify, didInitialize result: Swift.Bool)
+  func verify(_ okverify: OkVerify.OkHiVerify, didEncounterError error: OkVerify.OkVerifyError)
+  func verify(_ okverify: OkVerify.OkHiVerify, didStartAddressVerificationFor locationId: Swift.String)
+  func verify(_ okverify: OkVerify.OkHiVerify, didStopVerificationFor locationId: Swift.String)
+}
+@_inheritsConvenienceInitializers @objc public class OkHiVerify : ObjectiveC.NSObject {
+  public var delegate: OkVerify.OkVerifyDelegate?
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension OkVerify.OkHiVerify {
+  public static func initialize(with auth: OkCore.OkHiAuth, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> OkVerify.OkHiVerify?
+  public func initialize(with branchId: Swift.String, clientKey: Swift.String, environment: Swift.String)
+  public func initialize(with branchId: Swift.String, clientKey: Swift.String)
+  @objc dynamic public func startMonitoring()
+  public func startAddressVerification(user: OkCore.OkHiUser, location: OkCore.OkHiLocation)
+  public func startAddressVerification(phoneNumber: Swift.String, locationId: Swift.String, lat: Swift.Double, lon: Swift.Double)
+  public func stopAddressVerification(locationId: Swift.String)
+  public func isLocationPermissionGranted() -> Swift.Bool
+  public func isBackgroundLocationPermissionGranted() -> Swift.Bool
+  public func isLocationServicesEnabled() -> Swift.Bool
+  public static func openAppSettings()
+}
+extension OkVerify.OkHiVerify {
+  public func requestLocationPermission()
+  public func requestBackgroundLocationPermission()
+}
+extension OkVerify.OkHiVerify : CoreLocation.CLLocationManagerDelegate {
+  @objc dynamic public func locationManagerDidChangeAuthorization(_ manager: CoreLocation.CLLocationManager)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didStartMonitoringFor region: CoreLocation.CLRegion)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: Swift.Error)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didEnterRegion region: CoreLocation.CLRegion)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didExitRegion region: CoreLocation.CLRegion)
+}
+@objc @_inheritsConvenienceInitializers public class OkVerifyGeofenceTransition : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension OkVerify.OkVerifyError : Swift.Equatable {}
+extension OkVerify.OkVerifyError : Swift.Hashable {}
+extension OkVerify.OkVerifyLocationPermissionRequestType : Swift.Equatable {}
+extension OkVerify.OkVerifyLocationPermissionRequestType : Swift.Hashable {}

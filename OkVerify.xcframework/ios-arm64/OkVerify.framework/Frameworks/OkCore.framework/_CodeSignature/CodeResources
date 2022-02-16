@@ -4,143 +4,121 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/OkVerify-Swift.h</key>
+		<key>Headers/OkCore-Swift.h</key>
 		<data>
-		0U2pkBI4HOwrZF7Xq3t5PcQ43Ew=
+		tJvM6MWY4OGsovsN5zLxY5qCeE8=
 		</data>
-		<key>Headers/OkVerify.h</key>
+		<key>Headers/OkCore.h</key>
 		<data>
-		FkGj6cvu9rrcJuVY4Sc/OYbj8Bc=
+		y/m93YFEpIt5jL/gCsj/HQ/AgvE=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DeytjoSBiQcu0gNUFZrcfU24YUE=
+		jAD1LBm4zn2K9Yl43+FrEDwc5vk=
 		</data>
-		<key>Location.momd/Location.mom</key>
+		<key>Modules/OkCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		1B4yfegjPrkUYAlMvTyGr5Xe7Ps=
+		X4MrtzajoaHT/k0o2TFf4YuvEsQ=
 		</data>
-		<key>Location.momd/VersionInfo.plist</key>
+		<key>Modules/OkCore.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		nVigghPp+ubHFqT33zP+gS8tZsQ=
+		Iuj5tNvSdJ21ewv/XJ9kWoJ1sjc=
 		</data>
-		<key>Modules/OkVerify.swiftmodule/arm64-apple-ios.swiftdoc</key>
+		<key>Modules/OkCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		E89VTUxR8bc6FH5bfRUz1cIubTo=
+		/QP5T/Kyrdh5NRoxSu2SV4ySnmg=
 		</data>
-		<key>Modules/OkVerify.swiftmodule/arm64-apple-ios.swiftinterface</key>
+		<key>Modules/OkCore.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		27tHKc64qF3TKncylMmhih6XyEs=
+		X4MrtzajoaHT/k0o2TFf4YuvEsQ=
 		</data>
-		<key>Modules/OkVerify.swiftmodule/arm64-apple-ios.swiftmodule</key>
+		<key>Modules/OkCore.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		73uT1LRIDqB1J1LkLeXCpVFGn2E=
+		Iuj5tNvSdJ21ewv/XJ9kWoJ1sjc=
 		</data>
-		<key>Modules/OkVerify.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/OkCore.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		E89VTUxR8bc6FH5bfRUz1cIubTo=
-		</data>
-		<key>Modules/OkVerify.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		27tHKc64qF3TKncylMmhih6XyEs=
-		</data>
-		<key>Modules/OkVerify.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		73uT1LRIDqB1J1LkLeXCpVFGn2E=
+		/QP5T/Kyrdh5NRoxSu2SV4ySnmg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		LHaX0IgpzwbDrYWeK4YrsNolykE=
+		w4EzGq6f+KKlULo2BcTm7HPBJfE=
 		</data>
 		<key>README.md</key>
 		<data>
-		9B3KgPBW2Hhona6R/7cvg+XZvi0=
+		MjBFedPe2aw5bcyuc8c82fPjnQU=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/OkVerify-Swift.h</key>
+		<key>Headers/OkCore-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AHj2C5ObjTpreuxHbvWvFQt0kG+5S0aQml47KFkYJs4=
+			Rinaq1zHf2HThPbqGXIUmGVCY/T3GPZgrng4wY0XK5s=
 			</data>
 		</dict>
-		<key>Headers/OkVerify.h</key>
+		<key>Headers/OkCore.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cdZS+jZAHbOMruM9uVP8cNKN5XyhFAeUIY8kt2pUKvM=
+			iSsCtM5vd5qWkmnl5ZuxF70gjemWQu+G7C8dAwL2snE=
 			</data>
 		</dict>
-		<key>Location.momd/Location.mom</key>
+		<key>Modules/OkCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NWjI7CgPZeWD23gc2G6q1As27fDtfGu8RuLUfn+x3zg=
+			s2PyPf4jCciQ6kZNe0fYyKMoXZ382veUJ7SPmqMK4/0=
 			</data>
 		</dict>
-		<key>Location.momd/VersionInfo.plist</key>
+		<key>Modules/OkCore.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VwmU92wT74TgsWzzGbNdcj8/s2IV6Cg5BPAFQLz+nlI=
+			GQt0opXzCsj7PtTIUklnoGx6kxhWpv9JPUoYmkyjdTE=
 			</data>
 		</dict>
-		<key>Modules/OkVerify.swiftmodule/arm64-apple-ios.swiftdoc</key>
+		<key>Modules/OkCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NzenppOajDLbbgPuJB9+RxHVwe+Rl7qRWYzPEhpGpMQ=
+			mdsiMJUuml7l5+abNu+jeaHE97OmqpJXF40FDF8Ch0k=
 			</data>
 		</dict>
-		<key>Modules/OkVerify.swiftmodule/arm64-apple-ios.swiftinterface</key>
+		<key>Modules/OkCore.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			43UoMydxnPIMyLpgLiHXQ2wQoA4nngLx0JLHT0dwP5Y=
+			s2PyPf4jCciQ6kZNe0fYyKMoXZ382veUJ7SPmqMK4/0=
 			</data>
 		</dict>
-		<key>Modules/OkVerify.swiftmodule/arm64-apple-ios.swiftmodule</key>
+		<key>Modules/OkCore.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nQ2v+bgRKq0cqtYrTvFdjmTIAMx0umkWP2j1EOspXik=
+			GQt0opXzCsj7PtTIUklnoGx6kxhWpv9JPUoYmkyjdTE=
 			</data>
 		</dict>
-		<key>Modules/OkVerify.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/OkCore.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NzenppOajDLbbgPuJB9+RxHVwe+Rl7qRWYzPEhpGpMQ=
-			</data>
-		</dict>
-		<key>Modules/OkVerify.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			43UoMydxnPIMyLpgLiHXQ2wQoA4nngLx0JLHT0dwP5Y=
-			</data>
-		</dict>
-		<key>Modules/OkVerify.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			nQ2v+bgRKq0cqtYrTvFdjmTIAMx0umkWP2j1EOspXik=
+			mdsiMJUuml7l5+abNu+jeaHE97OmqpJXF40FDF8Ch0k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4CJiB0vt1CdCZmYmW3z4AOwSYe1IEOPN8gDsbMEBpB0=
+			o5GdEdBox3BZn3RTOmT723kE5+tkML8u1BTPvzaEIvY=
 			</data>
 		</dict>
 		<key>README.md</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ma8lePICIzUv69d8PVUZDHk8VEtX3bt65hrailGXZCA=
+			/L0wTGPtmPS31lxNAJ7CdLml9ACm6N61SpsWhspZdnk=
 			</data>
 		</dict>
 	</dict>
