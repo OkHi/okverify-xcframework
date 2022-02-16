@@ -153,7 +153,7 @@ public protocol OkVerifyDelegate {
   @objc deinit
 }
 extension OkVerify.OkHiVerify {
-  public static func initialize(with auth: OkCore.OkHiAuth, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> OkVerify.OkHiVerify?
+  public static func initialize(with auth: OkCore.OkHiAuth, launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
   public func initialize(with branchId: Swift.String, clientKey: Swift.String, environment: Swift.String)
   public func initialize(with branchId: Swift.String, clientKey: Swift.String)
   @objc dynamic public func startMonitoring()
